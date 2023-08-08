@@ -1,10 +1,11 @@
-package com.example.trabalhopratico
+package com.example.trabalhopratico.UI
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import com.example.trabalhopratico.R
 
 class ActivitySplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

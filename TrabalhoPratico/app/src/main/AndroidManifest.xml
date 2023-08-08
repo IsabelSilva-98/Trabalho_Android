@@ -13,13 +13,13 @@
         android:theme="@style/Theme.TrabalhoPratico"
         tools:targetApi="31">
         <activity
-            android:name=".SignUpActivity"
+            android:name=".UI.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".CursosCESAEActivity"
+            android:name=".UI.CursosCESAEActivity"
             android:exported="false" />
         <activity
-            android:name=".ActivitySplashScreen"
+            android:name=".UI.ActivitySplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,7 +28,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".UI.LoginActivity"
             android:exported="false" />
     </application>
 
