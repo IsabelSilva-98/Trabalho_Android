@@ -6,7 +6,7 @@ data class Cursos(
     val local: String = "",
     val dataArranque: String = "",
     val dataFim: String = "",
-    val preco: Double,
+    val preco: Double = 0.0,
     val duracao: Int = 0,
     val edicao: Int = 0
 )
