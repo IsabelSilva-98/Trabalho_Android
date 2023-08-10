@@ -5,13 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UI.CursosCESAEActivity">
+    
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/button_add"
+        android:layout_alignParentTop="true"
+        android:id="@+id/recycler_view_cursos"/>
 
-    <ListView
+   <!-- <ListView
         android:id="@+id/list_view_cursos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/button_add"
-        android:layout_alignParentTop="true"/>
+        android:layout_alignParentTop="true"/> -->
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

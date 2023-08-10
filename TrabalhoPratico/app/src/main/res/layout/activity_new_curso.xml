@@ -16,6 +16,13 @@
         android:layout_marginBottom="40dp"
         android:layout_marginTop="40dp"/>
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@drawable/adicionar"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/image_addCurso"/>
+
     <EditText
         android:id="@+id/edit_nome"
         android:layout_width="match_parent"

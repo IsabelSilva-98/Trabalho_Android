@@ -8,5 +8,6 @@ data class Cursos(
     val dataFim: String = "",
     val preco: Double = 0.0,
     val duracao: Int = 0,
-    val edicao: Int = 0
+    val edicao: Int = 0,
+    val imagemId: Int = 0
 )

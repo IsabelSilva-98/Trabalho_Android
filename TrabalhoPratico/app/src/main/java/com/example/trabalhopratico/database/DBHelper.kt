@@ -12,8 +12,8 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, "database.db", null
     val sql = arrayOf(
         "CREATE TABLE users (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT UNIQUE, password TEXT)",
         "INSERT INTO users (username, password) VALUES ('admin', 'password')",
-        "CREATE TABLE curso (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, local TEXT, dataArranque TEXT, dataFim TEXT, preco DOUBLE, duracao INT, edicao INT)",
-        "INSERT INTO curso (nome, local, dataArranque, dataFim, preco, duracao, edicao) VALUES ('Software Developer', 'Braga', '29/03/2023', '06/12/2023', '0', '1000', '1' )"
+        "CREATE TABLE curso (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, local TEXT, dataArranque TEXT, dataFim TEXT, preco DOUBLE, duracao INT, edicao INT, imagemId INT)",
+        "INSERT INTO curso (nome, local, dataArranque, dataFim, preco, duracao, edicao, imagemId) VALUES ('Software Developer', 'Braga', '29/03/2023', '06/12/2023', 0, 1000, 1, -1)"
     )
 
     override fun onCreate(db: SQLiteDatabase) {
@@ -104,7 +104,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, "database.db", null
 
     //CRUD CURSOS
 
-    fun insertCurso(nome:String, locaL:String, dataArranque:String, dataFim:String, preco:Double, duracao:Int, edicao:Int): Long{
+    fun insertCurso(nome:String, locaL:String, dataArranque:String, dataFim:String, preco:Double, duracao:Int, edicao:Int, imagemId:Int): Long{
         val db = this.writableDatabase
         val contentValues = ContentValues()
         contentValues.put("nome", nome)
@@ -114,22 +114,24 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, "database.db", null
         contentValues.put("preco", preco)
         contentValues.put("duracao", duracao)
         contentValues.put("edicao", edicao)
+        contentValues.put("imagemId", imagemId)
         val res = db.insert("curso", null, contentValues)
         db.close()
         return res
     }
 
     //CRUD USERS
-    fun updateCurso(id:Int, nome:String, locaL:String, dataArranque:String, dataFim:String, preco:Double, duracao:Int, edicao:Int): Int{
+    fun updateCurso(id:Int, nome:String, local:String, dataArranque:String, dataFim:String, preco:Double, duracao:Int, edicao:Int, imagemId:Int): Int{
         val db = this.writableDatabase
         val contentValues = ContentValues()
         contentValues.put("nome", nome)
-        contentValues.put("locaL", locaL)
+        contentValues.put("locaL", local)
         contentValues.put("dataArranque", dataArranque)
         contentValues.put("dataFim", dataFim)
         contentValues.put("preco", preco)
         contentValues.put("duracao", duracao)
         contentValues.put("edicao", edicao)
+        contentValues.put("imagemId", imagemId)
         val res = db.update("curso", contentValues, "id=?", arrayOf(id.toString()))
         db.close()
         return res
@@ -161,6 +163,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, "database.db", null
             val precoIndex = c.getColumnIndex("preco")
             val duracaoIndex = c.getColumnIndex("duracao")
             val edicaoIndex = c.getColumnIndex("edicao")
+            val imagemIdIndex = c.getColumnIndex("imagemId")
 
             curso = Cursos(
                 id = c.getInt(idIndex),
@@ -170,7 +173,8 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, "database.db", null
                 dataFim = c.getString(dataFimIndex),
                 preco = c.getDouble(precoIndex),
                 duracao = c.getInt(duracaoIndex),
-                edicao = c.getInt(edicaoIndex)
+                edicao = c.getInt(edicaoIndex),
+                imagemId = c.getInt(imagemIdIndex)
             )
         }
         db.close()
@@ -196,6 +200,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, "database.db", null
             val precoIndex = c.getColumnIndex("preco")
             val duracaoIndex = c.getColumnIndex("duracao")
             val edicaoIndex = c.getColumnIndex("edicao")
+            val imagemIdIndex = c.getColumnIndex("imagemId")
 
             do
             {
@@ -207,7 +212,8 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, "database.db", null
                     dataFim = c.getString(dataFimIndex),
                     preco = c.getDouble(precoIndex),
                     duracao = c.getInt(duracaoIndex),
-                    edicao = c.getInt(edicaoIndex)
+                    edicao = c.getInt(edicaoIndex),
+                    imagemId = c.getInt(imagemIdIndex)
                 )
                 listCurso.add(curso)
             }
