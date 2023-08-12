@@ -26,6 +26,7 @@ class CursosCESAEActivity : AppCompatActivity() {
     private lateinit var adapter: CursoListAdapter
     private lateinit var db: DBHelper
     private lateinit var result: ActivityResultLauncher<Intent>
+    private var ascDesc: Boolean = true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCursosCesaeactivityBinding.inflate(layoutInflater)
@@ -64,23 +65,39 @@ class CursosCESAEActivity : AppCompatActivity() {
             result.launch(Intent(applicationContext, NewCursoActivity::class.java))
         }
 
+        binding.buttonOrdem.setOnClickListener {
+            if(ascDesc){
+                binding.buttonOrdem.setImageResource(R.drawable.baseline_arrow_upward_24)
+            }
+            else{
+                binding.buttonOrdem.setImageResource(R.drawable.baseline_arrow_downward_24)
+            }
+            ascDesc = !ascDesc
+            cursoList = cursoList.reversed()
+            placeAdapter()
+        }
+
         result = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
             if(it.data!=null && it.resultCode == 1){
                 loadList()
             }
             else if(it.data!=null && it.resultCode == 0){
-                Toast.makeText(applicationContext, "Operação cancelada", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, getString(R.string.opera_o_cancelada), Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-    private fun loadList() {
-        cursoList = db.selectAllCurso().sortedWith(compareBy{it.nome})
+    private fun placeAdapter(){
         adapter = CursoListAdapter(cursoList, CursoOnClickListener { curso ->
             val intent = Intent(applicationContext, CursoDetailActivity::class.java)
             intent.putExtra("id", curso.id)
             result.launch(intent)
         })
         binding.recyclerViewCursos.adapter = adapter
+    }
+    private fun loadList() {
+        cursoList = db.selectAllCurso().sortedWith(compareBy{it.nome})
+        cursoList = db.selectAllCurso().sortedWith(compareBy{it.dataArranque})
+        placeAdapter()
     }
 }

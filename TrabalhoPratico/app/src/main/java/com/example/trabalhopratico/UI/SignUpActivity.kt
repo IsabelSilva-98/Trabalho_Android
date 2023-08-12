@@ -3,6 +3,7 @@ package com.example.trabalhopratico.UI
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.trabalhopratico.R
 import com.example.trabalhopratico.database.DBHelper
 import com.example.trabalhopratico.databinding.ActivityMainBinding
 import com.example.trabalhopratico.databinding.ActivitySignUpBinding
@@ -28,11 +29,11 @@ class SignUpActivity : AppCompatActivity() {
                 if (password == passConfirm) {
                     val res = db.insertUser(username, password)
                     if(res > 0){
-                        Toast.makeText(applicationContext, "Registo efetuado", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext, getString(R.string.registo_efetuado), Toast.LENGTH_SHORT).show()
                         finish()
                     }
                     else{
-                        Toast.makeText(applicationContext, "Erro no registo", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext, getString(R.string.erro_no_registo2), Toast.LENGTH_SHORT).show()
 
                         binding.editUsername.setText("")
                         binding.editPassword.setText("")
@@ -40,11 +41,11 @@ class SignUpActivity : AppCompatActivity() {
                     }
                 }
                 else{
-                    Toast.makeText(applicationContext, "As passwords não coincidem", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, getString(R.string.as_passwords_n_o_coincidem), Toast.LENGTH_SHORT).show()
                 }
             }
             else{
-                Toast.makeText(applicationContext, "Por favor preencha todos os campos obrigatórios", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, getString(R.string.por_favor_preencha_todos_os_campos_obrigat_rios2), Toast.LENGTH_LONG).show()
             }
         }
     }

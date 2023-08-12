@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Adicionar Curso"
+        android:text="@string/adicionar_curso"
         android:gravity="center"
         android:textSize="30sp"
         android:layout_marginBottom="40dp"
@@ -28,49 +28,49 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:hint="Nome do Curso" />
+        android:hint="@string/nome_do_curso" />
 
     <EditText
         android:id="@+id/edit_Local"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:hint="Local" />
+        android:hint="@string/local2" />
 
     <EditText
         android:id="@+id/edit_dataArranque"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:hint="Data de Arranque" />
+        android:hint="@string/data_de_arranque2" />
 
     <EditText
         android:id="@+id/edit_dataFim"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:hint="Data de Termino" />
+        android:hint="@string/data_de_termino2" />
 
     <EditText
         android:id="@+id/edit_preco"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:hint="Preço" />
+        android:hint="@string/pre_o2" />
 
     <EditText
         android:id="@+id/edit_duracao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:hint="Duração" />
+        android:hint="@string/dura_o2" />
 
     <EditText
         android:id="@+id/edit_edicao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:hint="Edição" />
+        android:hint="@string/edi_o2" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -84,7 +84,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_weight="1"
-            android:text="Gravar" />
+            android:text="@string/gravar2" />
 
         <Button
             android:id="@+id/button_cancelar"
@@ -93,7 +93,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_weight="1"
-            android:text="Cancelar" />
+            android:text="@string/cancelar2" />
 
     </LinearLayout>
 

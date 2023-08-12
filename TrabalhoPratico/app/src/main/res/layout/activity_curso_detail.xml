@@ -13,7 +13,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginBottom="40dp"
         android:gravity="center"
-        android:text="Detalhes do Curso"
+        android:text="@string/detalhes_do_curso"
         android:textSize="30sp" />
 
     <ImageView
@@ -33,7 +33,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nome:"/>
+            android:text="@string/nome"/>
 
         <EditText
             android:id="@+id/edit_nome"
@@ -54,7 +54,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Local:"/>
+            android:text="@string/local"/>
 
         <EditText
             android:id="@+id/edit_Local"
@@ -75,7 +75,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Data de Arranque:"/>
+            android:text="@string/data_de_arranque"/>
 
         <EditText
             android:id="@+id/edit_dataArranque"
@@ -99,7 +99,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Data de Termino:"/>
+            android:text="@string/data_de_termino"/>
 
         <EditText
             android:id="@+id/edit_dataFim"
@@ -121,7 +121,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Preço:"/>
+            android:text="@string/pre_o"/>
 
         <EditText
             android:id="@+id/edit_preco"
@@ -142,7 +142,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Duração:"/>
+            android:text="@string/dura_o"/>
 
         <EditText
             android:id="@+id/edit_duracao"
@@ -163,7 +163,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Edição:"/>
+            android:text="@string/edi_o"/>
 
 
         <EditText
@@ -188,7 +188,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
-            android:text="Editar"
+            android:text="@string/editar"
             android:id="@+id/button_editar"
             android:layout_weight="1"/>
 
@@ -196,7 +196,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="5dp"
-            android:text="Returnar"
+            android:text="@string/returnar"
             android:id="@+id/button_returnar"
             android:layout_weight="1"/>
 
@@ -216,7 +216,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_weight="1"
-            android:text="Gravar" />
+            android:text="@string/gravar" />
 
 
         <Button
@@ -226,7 +226,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_weight="1"
-            android:text="Cancelar" />
+            android:text="@string/cancelar" />
 
         <Button
             android:id="@+id/button_eliminar"
@@ -235,7 +235,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_weight="1"
-            android:text="Eliminar" />
+            android:text="@string/eliminar" />
 
     </LinearLayout>
 

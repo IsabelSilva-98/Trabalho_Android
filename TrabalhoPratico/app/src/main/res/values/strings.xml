@@ -1,3 +1,67 @@
 <resources>
-    <string name="app_name">TrabalhoPratico</string>
+    <string name="app_name" translatable="false">CesaeApp</string>
+    <string name="editado">Editado</string>
+    <string name="erro_ao_editar">Erro ao editar</string>
+    <string name="eliminado">Eliminado</string>
+    <string name="erro_ao_eliminar">Erro ao eliminar</string>
+    <string name="opera_o_cancelada">Operação cancelada</string>
+    <string name="erro_no_registo">Login inválido</string>
+    <string name="por_favor_preencha_todos_os_campos_obrigat_rios">Por favor preencha todos os campos obrigatórios</string>
+    <string name="dados_inseridos">Dados gravados</string>
+    <string name="preencha_todos_os_campos">Preencha todos os campos</string>
+    <string name="registo_efetuado">Registo efetuado</string>
+    <string name="erro_no_registo2">Erro no registo</string>
+    <string name="as_passwords_n_o_coincidem">As passwords não coincidem</string>
+    <string name="por_favor_preencha_todos_os_campos_obrigat_rios2">Por favor preencha todos os campos obrigatórios</string>
+    <string name="detalhes_do_curso">Detalhes do Curso</string>
+    <string name="nome">Nome:</string>
+    <string name="local">Local:</string>
+    <string name="data_de_arranque">Data de Arranque:</string>
+    <string name="pre_o">Preço:</string>
+    <string name="dura_o">Duração:</string>
+    <string name="editar">Editar</string>
+    <string name="gravar">Gravar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="selecione_uma_imagem">Selecione uma imagem</string>
+    <string name="remover_imagem">Remover Imagem</string>
+    <string name="logout" translatable="false">Logout</string>
+    <string name="login" translatable="false">Login</string>
+    <string name="manter_conta_iniciada">Manter conta iniciada</string>
+    <string name="entrar">Entrar</string>
+    <string name="n_o_tem_conta_registe_se">Não tem conta? Registe-se</string>
+    <string name="adicionar_curso">Adicionar Curso</string>
+    <string name="username" translatable="false">Username</string>
+    <string name="password" translatable="false">Password</string>
+    <string name="nome_do_curso">Nome do Curso</string>
+    <string name="local2">Local</string>
+    <string name="data_de_arranque2">Data de Arranque</string>
+    <string name="data_de_termino2">Data de Termino</string>
+    <string name="pre_o2">Preço</string>
+    <string name="edi_o2">Edição</string>
+    <string name="gravar2">Gravar</string>
+    <string name="cancelar2">Cancelar</string>
+    <string name="registo">Registo</string>
+    <string name="username2" translatable="false">Username</string>
+    <string name="password2" translatable="false">Password</string>
+    <string name="confirmar_password">Confirmar Password</string>
+    <string name="registar">Registar</string>
+    <string name="nome1">Nome  |</string>
+    <string name="bem_vindo_ao_cesaeapp">Bem-vindo ao Cesae!</string>
+    <string name="local3">Local  -  </string>
+    <string name="data">- Data</string>
+    <string name="criado_por">Desenvolvido por:</string>
+    <string name="br_ulio_fernandes" translatable="false">- Bráulio Fernandes</string>
+    <string name="isabel_silva" translatable="false">- Isabel Silva</string>
+    <string name="elementos_adicionados">Elementos adicionados:</string>
+    <string name="uma_activity_para_novo_registo">- Uma activity para novo registo</string>
+    <string name="autoavalia_o">Autoavaliação:</string>
+    <string name="_19">- 19</string>
+    <string name="voltar_p_gina_anterior">Voltar à página anterior</string>
+    <string name="returnar">Returnar</string>
+    <string name="data_de_termino">Data de Termino</string>
+    <string name="edi_o">Edição</string>
+    <string name="dura_o2">Duração</string>
+    <string name="sobre">Sobre</string>
+    <string name="login_v_lido">Login válido</string>
 </resources>

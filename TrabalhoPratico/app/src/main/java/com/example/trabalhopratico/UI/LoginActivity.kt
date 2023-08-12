@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.trabalhopratico.R
 import com.example.trabalhopratico.database.DBHelper
 import com.example.trabalhopratico.databinding.ActivityMainBinding
 
@@ -43,16 +44,16 @@ class LoginActivity : AppCompatActivity() {
                         editor.apply()
                     }
                     startActivity(Intent(this, CursosCESAEActivity::class.java))
-                    finish()
+                    Toast.makeText(applicationContext, getString(R.string.login_v_lido), Toast.LENGTH_SHORT).show()
                 }
                 else{
-                    Toast.makeText(applicationContext, "Erro no registo", Toast.LENGTH_LONG).show()
+                    Toast.makeText(applicationContext, getString(R.string.erro_no_registo), Toast.LENGTH_LONG).show()
                     binding.editUsername.setText("")
                     binding.editPassword.setText("")
                 }
             }
             else{
-                Toast.makeText(applicationContext, "Por favor preencha todos os campos obrigatórios", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, getString(R.string.por_favor_preencha_todos_os_campos_obrigat_rios), Toast.LENGTH_LONG).show()
             }
         }
 
@@ -60,6 +61,9 @@ class LoginActivity : AppCompatActivity() {
             startActivity(Intent(this, SignUpActivity::class.java))
         }
 
-        binding.textRecuperarPass.setOnClickListener {  }
+        binding.textSobre.setOnClickListener {
+            startActivity(Intent(this, SobreActivity::class.java))
+        }
+
     }
 }

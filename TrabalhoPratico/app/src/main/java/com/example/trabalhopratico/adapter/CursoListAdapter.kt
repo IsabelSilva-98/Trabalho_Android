@@ -24,12 +24,25 @@ class CursoListAdapter (
 
     override fun onBindViewHolder(holder: CursoViewHolder, position: Int) {
         val curso = cursoList[position]
-        holder.textNome.text = curso.nome
-        if(curso.imagemId > 0) {
+        holder.textNome1.text = curso.nome
+        holder.textNome2.text = curso.local
+        holder.textNome3.text = curso.dataArranque
+        if(curso.imagemId == 1) {
+            holder.imagem.setImageResource(R.drawable.curso1)
+        }else if(curso.imagemId == 2){
+            holder.imagem.setImageResource(R.drawable.curso7)
+        } else if(curso.imagemId == 3){
+            holder.imagem.setImageResource(R.drawable.curso5)
+        }else if(curso.imagemId == 4){
+            holder.imagem.setImageResource(R.drawable.curso4)
+        }else if(curso.imagemId == 5){
+            holder.imagem.setImageResource(R.drawable.curso3)
+        }else if(curso.imagemId == 6){
+            holder.imagem.setImageResource(R.drawable.curso2)
+        }else if(curso.imagemId == 7){
+            holder.imagem.setImageResource(R.drawable.curso6)
+        } else{
             holder.imagem.setImageResource(curso.imagemId)
-        }
-        else{
-            holder.imagem.setImageResource(R.drawable.adicionar)
         }
         holder.itemView.setOnClickListener {
             cursoOnClickListener.clickListener(curso)

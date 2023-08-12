@@ -8,6 +8,12 @@ android:gravity="center"
 android:orientation="vertical"
 tools:context=".UI.LoginActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/logocesae" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,7 +27,7 @@ tools:context=".UI.LoginActivity">
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
         android:gravity="center"
-        android:text="Registo"
+        android:text="@string/registo"
         android:textSize="30sp" />
 
 
@@ -32,7 +38,7 @@ tools:context=".UI.LoginActivity">
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:drawableStart="@drawable/baseline_person_outline_24"
-        android:hint="Username"
+        android:hint="@string/username2"
         android:textAlignment="center" />
 
 
@@ -43,7 +49,7 @@ tools:context=".UI.LoginActivity">
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:drawableStart="@drawable/baseline_password_24"
-        android:hint="Password"
+        android:hint="@string/password2"
         android:inputType="textPassword"
         android:textAlignment="center" />
 
@@ -55,7 +61,7 @@ tools:context=".UI.LoginActivity">
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:drawableStart="@drawable/baseline_password_24"
-        android:hint="Confirmar Password"
+        android:hint="@string/confirmar_password"
         android:inputType="textPassword"
         android:textAlignment="center" />
 
@@ -66,7 +72,7 @@ tools:context=".UI.LoginActivity">
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
-        android:text="Registar" />
+        android:text="@string/registar" />
 
     </LinearLayout>
 

@@ -14,7 +14,7 @@ class NewCursoActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityNewCursoBinding
     private lateinit var launcher: ActivityResultLauncher<Intent>
-    private var id: Int? = -1
+    private var id: Int? = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +32,7 @@ class NewCursoActivity : AppCompatActivity() {
             val preco = binding.editPreco.text.toString().toDouble()
             val duracao = binding.editDuracao.text.toString().toInt()
             val edicao = binding.editEdicao.text.toString().toInt()
-            var imagemId = -1
+            var imagemId = 0
             if(id!=null){
                 imagemId = id as Int
             }
@@ -40,12 +40,12 @@ class NewCursoActivity : AppCompatActivity() {
             if(nome.isNotEmpty() && local.isNotEmpty() && dataArranque.isNotEmpty() && dataFim.isNotEmpty()){
                 val res = db.insertCurso(nome, local, dataArranque, dataFim, preco, duracao, edicao, imagemId)
                 if(res > 0){
-                    Toast.makeText(applicationContext, "Dados inseridos", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, getString(R.string.dados_inseridos), Toast.LENGTH_SHORT).show()
                     setResult(1, i)
                     finish()
                 }
                 else{
-                    Toast.makeText(applicationContext, "Preencha todos os campos", Toast.LENGTH_LONG).show()
+                    Toast.makeText(applicationContext, getString(R.string.preencha_todos_os_campos), Toast.LENGTH_LONG).show()
                 }
             }
         }
@@ -62,7 +62,7 @@ class NewCursoActivity : AppCompatActivity() {
         launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
             if(it.data != null && it.resultCode == 1) {
                 id = it.data?.extras?.getInt("id")
-                binding.imageAddCurso.setImageDrawable(resources.getDrawable(id!!))
+                binding.imageAddCurso.setImageResource(id!!)
             }
             else{
                 id = -1

@@ -11,9 +11,17 @@ import com.example.trabalhopratico.model.UserModel
 class DBHelper(context: Context) : SQLiteOpenHelper(context, "database.db", null, 1) {
     val sql = arrayOf(
         "CREATE TABLE users (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT UNIQUE, password TEXT)",
-        "INSERT INTO users (username, password) VALUES ('admin', 'password')",
+        "INSERT INTO users (username, password) VALUES ('admin1', 'password')",
+        "INSERT INTO users (username, password) VALUES ('admin2', 'pass')",
+        "INSERT INTO users (username, password) VALUES ('admin3', 'word')",
         "CREATE TABLE curso (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, local TEXT, dataArranque TEXT, dataFim TEXT, preco DOUBLE, duracao INT, edicao INT, imagemId INT)",
-        "INSERT INTO curso (nome, local, dataArranque, dataFim, preco, duracao, edicao, imagemId) VALUES ('Software Developer', 'Braga', '29/03/2023', '06/12/2023', 0, 1000, 1, -1)"
+        "INSERT INTO curso (nome, local, dataArranque, dataFim, preco, duracao, edicao, imagemId) VALUES ('Software Developer', 'Braga', '29/03/2023', '06/12/2023', 0, 1000, 1, 1)",
+        "INSERT INTO curso (nome, local, dataArranque, dataFim, preco, duracao, edicao, imagemId) VALUES ('Cibersegurança', 'Leça da Palmeira', '12/09/2023', '21/12/2023', 0, 200, 3, 2)",
+        "INSERT INTO curso (nome, local, dataArranque, dataFim, preco, duracao, edicao, imagemId) VALUES ('Excel Iniciação', 'Porto', '18/09/2023', '02/10/2023', 165.00, 15, 6, 3)",
+        "INSERT INTO curso (nome, local, dataArranque, dataFim, preco, duracao, edicao, imagemId) VALUES ('Análise de Dados', 'Aveiro', '20/09/2023', '23/01/2024', 0, 300, 2, 4)",
+        "INSERT INTO curso (nome, local, dataArranque, dataFim, preco, duracao, edicao, imagemId) VALUES ('Design UX/UI', 'Porto', '21/09/2023', '20/11/2023', 0, 75, 1, 5)",
+        "INSERT INTO curso (nome, local, dataArranque, dataFim, preco, duracao, edicao, imagemId) VALUES ('PowerBI', 'Viseu', '02/10/2023', '30/11/2023', 0, 75, 5, 6)",
+        "INSERT INTO curso (nome, local, dataArranque, dataFim, preco, duracao, edicao, imagemId) VALUES ('Coordenador da Formação', 'Leça da Palmeira', '18/09/2023', '30/10/2023', 160.00, 50, 1, 7)"
     )
 
     override fun onCreate(db: SQLiteDatabase) {
@@ -104,7 +112,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, "database.db", null
 
     //CRUD CURSOS
 
-    fun insertCurso(nome:String, locaL:String, dataArranque:String, dataFim:String, preco:Double, duracao:Int, edicao:Int, imagemId:Int): Long{
+    fun insertCurso(nome:String, locaL:String, dataArranque:String, dataFim:String, preco:Double, duracao:Int, edicao:Int, imagemId: Int): Long{
         val db = this.writableDatabase
         val contentValues = ContentValues()
         contentValues.put("nome", nome)
@@ -120,7 +128,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, "database.db", null
         return res
     }
 
-    //CRUD USERS
+
     fun updateCurso(id:Int, nome:String, local:String, dataArranque:String, dataFim:String, preco:Double, duracao:Int, edicao:Int, imagemId:Int): Int{
         val db = this.writableDatabase
         val contentValues = ContentValues()
